@@ -14,10 +14,14 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+
+import cucumber.api.junit.Cucumber;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runner.RunWith;
 
+@RunWith(Cucumber.class)
 @ExtendWith(LocalstackDockerExtension.class)
 ///NOTE: localstack 0.9.1 works with localstack-utils  0.1.15
 ///NOTE: however we need to retag 0.9.1 to latest as localstack only look for latest docker image
