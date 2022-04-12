@@ -8,7 +8,7 @@ Localstack Docker version 0.9.1 works with LocalstackUtils 0.1.15 however the ru
 
 	
 ##### pull docker image for localstack/localstack:0.9.1 and then tag it to localstack/localstack:latest	
-set pullNewImage = false in the LocalstackDockerProperties`
+`set pullNewImage = false in the LocalstackDockerProperties`
 
 
  
