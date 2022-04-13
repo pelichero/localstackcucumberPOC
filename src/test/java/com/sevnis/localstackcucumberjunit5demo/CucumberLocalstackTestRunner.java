@@ -26,7 +26,7 @@ import org.junit.runner.RunWith;
 ///NOTE: localstack 0.9.1 works with localstack-utils  0.1.15
 ///NOTE: however we need to retag 0.9.1 to latest as localstack only look for latest docker image
 ///NOTE: pullNewImage need to be configured to false or it will still try to download the latest image
-@LocalstackDockerProperties(pullNewImage = false, services = {"lambda", "dynamodb"})
+@LocalstackDockerProperties(pullNewImage = false, services = {"lambda", "dynamodb", "sqs"})
 public class CucumberLocalstackTestRunner {
 
   @BeforeAll
@@ -49,7 +49,7 @@ public class CucumberLocalstackTestRunner {
       String containerId = (String) containerIdField.get(LocalstackDocker.INSTANCE.getLocalStackContainer());
 
       String localStackPortConfig = new DockerExe().execute(Arrays.asList("exec", "-i", containerId, "cat",
-          "/opt/code/localstack/.venv/lib/python2.7/site-packages/localstack_client/config.py"));
+          "/opt/code/localstack/.venv/lib/python3.8/site-packages/localstack_client/config.py"));
 
       Map<String, Integer> ports = new RegexStream(
           Pattern.compile("'(\\w+)'\\Q: '{proto}://{host}:\\E(\\d+)'").matcher(localStackPortConfig)).stream()
