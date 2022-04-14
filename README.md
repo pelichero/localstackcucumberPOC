@@ -14,5 +14,5 @@ Localstack Docker version 0.9.1 works with LocalstackUtils 0.1.15 however the ru
  
 
 - 1 passo : `docker login <<REPO INTERNO>>`
-- 2 passo:  `docker pull <<REPO INTERNO>>/localstack:0.9.1`
+- 2 passo:  `docker pull <<REPO INTERNO>>/localstack/localstack:0.9.1`
 - 3 passo:  `tag <<REPO INTERNO>>/localstack/localstack:0.9.1 localstack/localstack:latestd.cloud.ihf/localstack/localstack:0.9.1k:0.9.1 localstack/localstack:latestifactory.prod.cloud.ihf/localstack/localstack`
